@@ -22,9 +22,9 @@ public class TestBase extends ExtentReport{
 	
 	@BeforeTest
 	public void invokeBrowser() throws IOException {
-		browsername=ReadLocatorsFile.readPropertiesFile("Browser", ProjectBaseConstantPaths.CONFIG_FILE);
+		//browsername=ReadLocatorsFile.readPropertiesFile("Browser", ProjectBaseConstantPaths.CONFIG_FILE);
 		//url=ReadLocatorsFile.readPropertiesFile("url", ProjectBaseConstantPaths.CONFIG_FILE);
-		//browsername=System.getenv("browserName");
+		browsername=System.getenv("browserName");
 		if (browsername.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", ProjectBaseConstantPaths.CHROME_FILE);
 			driver = new ChromeDriver();
